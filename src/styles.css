@@ -52,23 +52,53 @@ ul {
 
 body {
   font-family: sans-serif;
-  margin: 20px;
-  padding: 0;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: 
+    linear-gradient(45deg, rgba(69, 183, 209, 0.1) 25%, transparent 25%), 
+    linear-gradient(-45deg, rgba(69, 183, 209, 0.1) 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, rgba(255, 107, 107, 0.1) 75%), 
+    linear-gradient(-45deg, transparent 75%, rgba(255, 107, 107, 0.1) 75%);
+  background-size: 60px 60px;
+  background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
 }
 
 .square {
   background: #fff;
   border: 1px solid #999;
   float: left;
-  font-size: 24px;
+  font-size: 36px;
   font-weight: bold;
-  line-height: 34px;
-  height: 34px;
+  height: 80px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 34px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.square:hover {
+  background-color: #f8f9fa;
+}
+
+.x-mark {
+  color: #45b7d1;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.o-mark {
+  color: #ff6b6b;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .board-row:after {
@@ -78,13 +108,76 @@ body {
 }
 
 .status {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
 }
 .game {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  align-items: center;
+}
+
+.game-title {
+  font-size: 48px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient 3s ease infinite;
+  margin: 0 0 30px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .game-info {
-  margin-left: 20px;
+  margin-top: 25px;
+  margin-left: 0;
+  text-align: center;
+}
+
+.game-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.game-info li {
+  margin-bottom: 5px;
+}
+
+.reset-button {
+  background-color: #ff4757;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 18px;
+  transition: background-color 0.2s;
+}
+
+.reset-button:hover {
+  background-color: #ff3742;
 }
