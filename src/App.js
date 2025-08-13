@@ -39,7 +39,7 @@ function Board({ xIsNext, squares, onPlay }) {
   } else {
     // If no winner yet
     move = (xIsNext ? "X" : "O") + "'s turn to move"; // Display whose turn it is
-  }
+  }//
   return (
     <>
       {" "}
