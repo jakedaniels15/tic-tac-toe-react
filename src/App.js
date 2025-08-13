@@ -32,7 +32,7 @@ function Board({ xIsNext, squares, onPlay }) {
     onPlay(nextSquares); // Pass the new board state back to Game component
   }
   const winner = calculateWinner(squares); // Check if there's a winner
-  let move; // Variable to store the status message
+  let move; 
   if (winner) {
     // If there's a winner
     move = "Winner: " + winner; // Display winner message
