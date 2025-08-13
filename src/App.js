@@ -18,7 +18,7 @@ function Board({ xIsNext, squares, onPlay }) {
   function handleClick(i) {
     // Function to handle clicks on specific squares
     if (squares[i] || calculateWinner(squares)) {
-      // Exit if square is occupied or game is won
+      
       return;
     }
     const nextSquares = squares.slice(); // Create a copy of the current board state
